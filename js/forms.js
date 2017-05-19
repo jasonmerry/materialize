@@ -37,9 +37,11 @@
       var formReset = $(e.target);
       if (formReset.is('form')) {
         formReset.find(input_selector).removeClass('valid').removeClass('invalid');
+        formReset.find(input_selector).parent().removeClass('valid').removeClass('invalid');
         formReset.find(input_selector).each(function () {
           if ($(this).attr('value') === '') {
             $(this).siblings('label').removeClass('active');
+            $(this).parent().removeClass('active');
           }
         });
 
@@ -54,6 +56,7 @@
     // Add active when element has focus
     $(document).on('focus', input_selector, function () {
       $(this).siblings('label, .prefix').addClass('active');
+      $(this).parent().addClass('active');
     });
 
     $(document).on('blur', input_selector, function () {
@@ -65,6 +68,7 @@
       }
 
       $inputElement.siblings(selector).removeClass('active');
+      $inputElement.parent().removeClass('active');
 
       validate_field($inputElement);
     });
@@ -90,6 +94,28 @@
           else {
             object.removeClass('valid');
             object.addClass('invalid');
+          }
+        }
+      }
+
+      console.log("parent info", object.parent().attr('class'));
+
+      if (object.val().length === 0 && object[0].validity.badInput === false) {
+        if (object.parent().hasClass('validate')) {
+          object.parent().removeClass('valid');
+          object.parent().removeClass('invalid');
+        }
+      }
+      else {
+        if (object.parent().hasClass('validate')) {
+          // Check for character counter attributes
+          if ((object.is(':valid') && hasLength && (len <= lenAttr)) || (object.is(':valid') && !hasLength)) {
+            object.parent().addClass('valid');
+            object.parent().removeClass('invalid');
+          }
+          else {
+            object.parent().addClass('invalid');
+            object.parent().removeClass('valid');
           }
         }
       }

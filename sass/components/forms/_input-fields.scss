@@ -164,6 +164,16 @@ textarea.materialize-textarea {
       font-size: $label-font-size;
       transform: translateY(-140%);
     }
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 60px;
+      opacity: 0;
+      transition: .2s opacity ease-out, .2s color ease-out;
+      width: 100%;
+      pointer-events: none;
+    }
   }
 
   // Prefix Icons
@@ -199,6 +209,31 @@ textarea.materialize-textarea {
     .prefix ~ input {
       width: 80%;
       width: calc(100% - 3rem);
+    }
+  }
+  &.active {
+    label {
+      color: $input-focus-color;
+    }
+  }
+  &.validate {
+    &.valid {
+      label {
+          color: $input-success-color;
+          &:after {
+          content: attr(data-success);
+          opacity: 1;
+        }
+      }
+    }
+    &.invalid {
+      label {
+        color: $input-error-color;
+        &:after {
+          content: attr(data-error);
+          opacity: 1;
+        }
+      }
     }
   }
 }
