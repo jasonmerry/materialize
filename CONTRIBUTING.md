@@ -1,7 +1,7 @@
 ## Contributing
 - Compiling Files
   - `npm install`
-  - `grunt monitor`, this will compile .scss, .js., .jade files
+  - `grunt monitor`, this will compile .scss, .js., .jade files (You will need grunt installed globally)
 - Documentation
   - If you notice an error in the documentation, please edit the corresponding .html page under jade/page-contents/.
 - Issues
