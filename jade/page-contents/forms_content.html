@@ -51,15 +51,6 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col s12">
-                A semantically correct Input field
-                <div class="input-field validate">
-                  <label for="email2" data-error="wrong" data-success="right">Email</label>
-                  <input id="email2" type="email" class="validate">
-                </div>
-              </div>
-            </div>
           </form>
         </div>
         <pre><code class="language-markup">
@@ -106,6 +97,93 @@
         &lt;div class="col s12">
           A semantically correct Input field
           &lt;div class="input-field validate">
+            &lt;label for="email" data-error="wrong" data-success="right">Email</label>
+            &lt;input id="email" type="email" class="validate">
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/form>
+  &lt;/div>
+        </code></pre><br>
+        <h4>Semantically correct Inputs</h4>
+        <p>The code in these fields is semantically ordered to follow W3C standards and to aid with accessibility of your code.</p>
+        <p>You can use the <code class="language-markup">validate</code> class as before.</p>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6 validate">
+                <label for="first_name">First Name</label>
+                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+              </div>
+              <div class="input-field col s6">
+                <label for="last_name">Last Name</label>
+                <input id="last_name" type="text">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 validate disabled">
+                <label for="disabled">Disabled</label>
+                <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 validate">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="validate">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 validate">
+                <label for="email" data-error="wrong" data-success="right">Email</label>
+                <input id="email" type="email" class="validate">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                This is an inline input field:
+                <div class="input-field inline validate">
+                  <label for="email" data-error="wrong" data-success="right">Email</label>
+                  <input id="email" type="email" class="validate">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <pre><code class="language-markup">
+  &lt;div class="row">
+    &lt;form class="col s12">
+      &lt;div class="row">
+        &lt;div class="input-field col s6 validate">
+          &lt;label for="first_name">First Name</label>
+          &lt;input placeholder="Placeholder" id="first_name" type="text" class="validate">
+        &lt;/div>
+        &lt;div class="input-field col s6">
+          &lt;label for="last_name">Last Name</label>
+          &lt;input id="last_name" type="text">
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="row">
+        &lt;div class="input-field col s12 validate disabled">
+          &lt;label for="disabled">Disabled</label>
+          &lt;input disabled value="I am not editable" id="disabled" type="text" class="validate">
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="row">
+        &lt;div class="input-field col s12 validate">
+          &lt;label for="password">Password</label>
+          &lt;input id="password" type="password" class="validate">
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="row">
+        &lt;div class="input-field col s12 validate">
+          &lt;label for="email" data-error="wrong" data-success="right">Email</label>
+          &lt;input id="email" type="email" class="validate">
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="row">
+        &lt;div class="col s12">
+          This is an inline input field:
+          &lt;div class="input-field inline validate">
             &lt;label for="email" data-error="wrong" data-success="right">Email</label>
             &lt;input id="email" type="email" class="validate">
           &lt;/div>
@@ -181,7 +259,7 @@
         <div class="row">
           <form class="col s12">
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 validate">
                 <input id="email2" type="email" class="validate">
                 <label for="email2" data-error="wrong" data-success="right">Email</label>
               </div>
